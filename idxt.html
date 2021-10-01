@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUGAS SAFIRAB</title>
+</head>
+<body>
+    <script type="module">
+        //ambil rumus persegi dan persepi panjang
+        import {luasPersegi as luas, Kelilingpersegi as Keliling} from './persegi.js';
+        //ambil rumus segitiga
+        import {luasSegitiga as Luas, kelilingSegitiga as keliling} from './segitiga.js';
+        //ambil trapesium
+        import {luastrapesium as luas2, kelilingTrapesium as Keliling2} from './trapesium.js';
+        //ambil rumus jajar genjang
+
+        import {Luasjajargenjang as luas3, kelilingjajargenjang as Keliling3} from './JAJARgenjang.js';
+        import {luasbelahketupat as luas4, kelilingbelahketupat as Keliling4} from './belahketupat.js';
+        import {luaslayanglayang as luas5, KelilingLayangLayang as Keliling5} from './layang.js';
+
+
+        var milih;//untuk pilihan opsi bangun datar
+        milih=prompt("Pilih : 1.persegi, 2.segitiga, 3.trapesium, 4.jajargenjang, 5.belahketupat 6.layanglayang");
+        if (milih == "1"){
+            
+        let P = Number(prompt("Masukkan ukuran Panjang (cm)"));
+        let L = Number(prompt("Masukkan ukuran Lebar (cm)"));
+
+        let l = luas(P,L);
+        let K = Keliling(P,L);
+        alert(`luas ${l} cm\n memiliki luasNYA ${L} cm\u00B2 & kelilingnya ${K} cm`);
+            
+        }
+        
+        else if (milih == "2"){
+
+        let a = Number(prompt("masukkan alas (cm)"));
+        let t = Number(prompt("masukkan tinggi(cm)"));
+        //sisi dalam segitiga sama saja berartikan ac+ab+bc salah satu sisinya memiliki nilai yang sama dengan alas segitiga
+        let s1 = Number(prompt("masukkan ukuran sisi1(cm)"));
+        let s2 = Number(prompt("masukkan ukuran sisi2(cm)"));
+        let s3 = Number(prompt("masukkan ukuran sisi3(cm)"));
+
+        let L = Luas(a,t);
+        let K = keliling(s1,s2,s3);
+        alert(`alas: ${a} cm\ntinggi: ${t} cm\nsisi1: ${s1} cm\nsisi2: ${s2} cm\nsisi3: ${s3} cm\nwow!!! LuasNYA ${L} cm\u00B2 & kelilingnya ${K} cm`);
+        }
+
+        else if (milih == "3"){
+        let a = Number(prompt("masukkan alas (cm)"));
+        let t = Number(prompt("masukkan tinggi(cm)"));
+        let js = Number(prompt("masukkan jumlah sisi sejajar(cm)"));
+        
+        let A = Number(prompt("masukkan ukuran A(cm)"));
+        let B = Number(prompt("masukkan ukuran B(cm)"));
+        let C = Number(prompt("masukkan ukuran C(cm)"));
+        let D = Number(prompt("masukkan ukuran D(cm)"));
+
+        let l2 = luas2(a,t,js);
+        let K2 = Keliling2(A,B,C,D);
+
+        alert(`alas: ${a} cm\ntinggi: ${t}cm\nA: ${A} cm\nB: ${B} cm\nC: ${C} cm\nkeliling2: ${K2} cm\nwow!!! luas2 ${l2} cm\u00B2 & jumlahsisisejajar ${js} cm`);
+        }
+
+        else if (milih == "4"){
+        let a = Number(prompt("masukkan ukuran alas (cm)"));
+        let t = Number(prompt("masukkan ukuran tinggi(cm)"));
+        
+        let AB = Number(prompt("masukkan AB(cm)"));
+        let BC = Number(prompt("masukkan BC(cm)"));
+       
+        let L3 = luas3(a,t);
+        let K3 = Keliling3(AB,BC);
+        alert(`alas: ${a} cm\ntinggi: ${t}cm\nAB: ${AB} cm\nBC: ${BC} cm\u00B2 & keliling3: ${K3}`);
+        }
+
+        else if (milih == "5"){
+        let d1 = Number(prompt("masukkan diagonal1 (cm)"));
+        let d2 = Number(prompt("masukkan diagonal2 (cm)"));
+        
+        
+        let a = Number(prompt("masukkan ukuran A(cm)"));
+        let b = Number(prompt("masukkan ukuran B(cm)"));
+        let c = Number(prompt("masukkan ukuran C(cm)"));
+        let d = Number(prompt("masukkan ukuran D(cm)"));
+        
+        let l4 = luas4(a,d1,d2);
+        let K4= Keliling4(a,b,c,d);
+        alert(`luas4: ${l4} cm\ndiagonal1: ${d1} cm\ndiagonal2: ${d2} cm\na: ${a} cm\nb: ${b} cm\nc: ${c} cm\nd: ${d} cm\u00B2 & Keliling4: ${K4}`);
+
+        }
+
+        else if (milih == "6"){
+        let AB = Number(prompt("Masukkan AB (cm)"));
+        let BC = Number(prompt("Masukkan BC (cm)"));
+
+        let sisiPendek = Number(prompt("Masukkan sisi Pendek (cm)"));
+        let sisiPanjang = Number(prompt("Masukkan sisi Panjang (cm)"));
+
+
+        let l5 = luas5(AB,BC);
+        let K5 = Keliling5(sisiPendek,sisiPanjang);
+        alert(`luas5: ${l5} cm\nAB: ${AB} cm\nBC: ${BC} cm\nsisipendek: ${sisiPendek} cm\nsisipanjang: ${sisiPanjang} cm\u00B2 & Keliling5: ${K5}`);
+
+        }
+
+        else{
+        alert("Anda salah memasukkan nomor,");
+        }
+    </script>
+</body>
+</html>
